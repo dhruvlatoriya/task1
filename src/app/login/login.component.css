@@ -1,0 +1,102 @@
+.parent{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.child{
+    height: 100vh;
+    width: 50vw;
+    background-color:rgb(21, 21, 160); 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color :white
+}
+.child1{
+    height:100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    /* background-image:url("sign_in.png");
+    background-image:url("logo-text.png") 
+     */
+    
+}
+.child1 .image1 {
+    /* border: 2px solid red; */
+    width: 70%;
+}
+.image2 {
+    width: 60%;
+    height: 15%;
+    /* border: 2px solid red; */
+}
+
+.password{
+    position: relative;
+    /* width:25px; */
+    width: 100%;
+}
+.password{
+    width: 100%;
+}
+.password input{
+    /* border: 3px ; */
+    padding:0px;
+    border-radius: 5px;
+    font-size: 15px; 
+    height:6vh; 
+    width: 100%;
+}
+.eyeicon{
+    color: black;
+    position: absolute;
+    left:92%;
+    /* right: 20px; */
+     top:28px;
+    cursor: pointer;
+   
+}
+
+.sumbit {
+    cursor: pointer;
+}
+.submit:hover {
+    /* background-color:#3043d4; */
+    background-color: yellow;
+}
+.img1{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image:url("Forech_Logo.jpg")  */
+}
+.password1{
+    color: black;
+}
+
+
+@media screen and (max-width : 950px) {
+    .child1 {
+        display: none;
+    }
+    .parent {
+        justify-content: center;
+        align-items: center;
+        background-color: aquamarine;
+    }
+    .child{
+        background-color: ivory;
+        color :black;
+        border-radius: 20px;  
+    }
+}
+@media screen and (max-width:490){
+    .child{
+        width: 100%;
+    }
+    
+}

@@ -1,0 +1,36 @@
+<div class="parent">
+  <form [formGroup]="profileForm">
+    <div class="child">
+      <div>
+       <div class="img1">
+        <img src="Forech_Logo.jpg" width="70px" height="80px">
+        <h1 style="margin: left 3px; font-size:40px;">Sign in</h1>
+       </div>
+       <hr style="width:100%">
+        <div class="login-form">
+          <div>
+            <div style="margin-top: 30px;">Email address </div>
+            <input  formControlName="Emailaddress" type="text" placeholder="gmail" style="height:6vh; width:100%; border-radius:7px; padding-left:10px;">
+           </div>
+            
+            <div class="password">
+              <div style="margin-top: 20px;">Password </div>
+              <input formControlName="password" [type]="changetype?'password':'text'" placeholder="password" style="padding-left:10px;">
+              <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye' "></i></span>
+              <div style="color:red" *ngIf="!this.profileForm.get('password')?.valid&&this.profileForm.get('password')?.value!==''">please insert valid password</div>
+            </div>  
+          <p style="margin-top:30px;">Forgot your password? Reset Now</p>
+          <button class="sumbit" style="height:6vh; width:100%; margin-top:70px;border-radius:7px;background-color:#9099df;"(click)="signIn()">Sign in</button>
+          <p>powered by pristine Business solution</p>
+      </div>
+    </div>
+  </div>
+  </form>
+  <div class="child1">
+      <div class="image1"><img src="sign_in.png" width="100%"></div>
+      <div class="image2"><img src="logo-text.png" width="100%" height="100%"></div>
+  </div>
+</div>
+
+
+  

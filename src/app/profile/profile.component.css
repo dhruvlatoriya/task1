@@ -1,0 +1,188 @@
+.parent{
+    height: 50rem;
+    width:100vw;
+    /* border:1px solid black */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dot{
+    display: flex;
+    width: 100%;
+    height: 3%;
+    /* justify-content: space-between; */
+    background-color:#f7f7f9;
+   align-items: center;
+   gap:8px;
+   /* box-sizing:border-box; */
+   padding-left: 10px;
+}
+.dot1{
+    height:8px;
+    width:8px;
+    background-color:#ee6a5e;
+    border-radius: 50%;
+   
+}
+.dot2{
+    height:8px;
+    width:8px;
+    background-color:#f4be4f;
+    border-radius: 50%;
+}
+.dot3{
+    height:8px;
+    width:8px;
+    background-color: #60c452;
+    border-radius: 50%;
+    
+}
+.heading {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    /* gap: 15px; */
+    /* box-sizing: border-box; */
+    padding-left:3%;
+    padding-right: 3%;
+    border-bottom: 1px solid gainsboro;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.heading div h5 {
+    font-weight: 550;
+}
+.prifilepicture{
+    height:35px;
+    width: 35px;
+    background-image:url("sign_in.png");
+    background-image: url('Forech_Logo.jpg');
+    background-position: center;
+    background-size: cover;
+    /* background-color: #60c452; */
+    border-radius: 50%;
+    background-image:url("sign_in.png");
+    
+}
+.heading1{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+ .heading2{
+    display: flex;
+    gap:20px;
+    align-items: center;
+ }
+ .heading2 button{
+    border:1px solid gainsboro;
+ }
+ .setting{
+    height: 5%;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    position: relative; 
+    margin-bottom:30px;
+ }
+ .setting h4{
+    position: absolute;
+    top: 60%;
+    left: 3%;
+ }
+.background{
+    width: 80%;
+    height: 10%;
+    background-color: #f4eff6;
+    background-image: linear-gradient(to right, #eff4f0, #efe3ea);
+    border-top-left-radius: 40px;
+}
+.profilename{
+    width:75%; 
+    display: flex; 
+    justify-content: space-between;
+    padding-top: 4px;
+}
+.image{
+    height:100px;
+    width:100px; 
+    border-radius:50%;
+    background-image:url("sign_in.png");
+    background-position: center;
+    background-size:cover;
+    border:4px solid white; 
+    position:relative;
+    top:-30px;
+}
+.username{
+    width: 70%;
+    height: 4%;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:15px
+}
+.username input{
+    height: 20px;
+    width:80%;
+    border: 1px solid gainsboro;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-left: 4px;
+}
+.link{
+    height:20px;
+    width: 60px;
+    border:1px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.photo{
+    width: 70%;
+    /* height: 15%; */
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:15px;
+    padding: 20px 0px;
+}
+.middleimg{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-image:url("sign_in.png");
+    background-position: center;
+    background-size:cover
+
+}
+/* .photo1{
+    height:100px;
+    width:100px; 
+    border-radius:50%;
+    background-image:url("sign_in.png");
+}  */
+ 
+ .maticon{
+    color: rgba(128, 128, 128, 0.644);
+ }
+.photo div input{
+    height: 40px;
+    border-radius: 10px;
+    border :1px solid gainsboro;
+    padding-left: 8px;
+    
+}
+.lastfield{
+    display:flex;
+   
+    align-items:center; 
+    border:1px solid gainsboro; 
+    height:30px; 
+    width:25%;
+}
