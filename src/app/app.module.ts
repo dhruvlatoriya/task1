@@ -18,6 +18,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SessionexpiredComponent } from './sessionexpired/sessionexpired.component';
 import { ProfileComponent } from './profile/profile.component';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import {MatSelectModule} from '@angular/material/select';
     HomeComponent,
     PagenotfoundComponent,
     SessionexpiredComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatSidenavModule,
     MatIconModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatExpansionModule
     
   ],
   providers: [CookieService],

@@ -1,0 +1,37 @@
+<div class="header">
+        <div class="button" [matMenuTriggerFor]="menu">
+          <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
+        </div>
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item (click)="gotoProfile()">Profile</button> -->
+        <!-- <button mat-menu-item>{{apihitting.source[0].email}}</button> -->
+        <button mat-menu-item (click)="gotoLogOut()">LogOut</button>
+        </mat-menu>
+  
+        <div style="position: absolute; top: 10px;" class="example-sidenav-content">
+          <button type="button" mat-button (click)="toggle()">
+            <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+          </button>
+        </div>
+</div>
+<div>
+    <mat-drawer-container class="example-container" autosize >
+      <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="myservice.istoggle">
+  
+        <mat-accordion *ngFor="let ele of menuarray">
+  
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              <mat-icon style="font-size: smaller;">{{ele.icon}}</mat-icon>
+               {{ele.title}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngFor="let value of ele.children"><button mat-button>{{value.title}}</button></div> 
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-drawer>
+    </mat-drawer-container>
+  </div>
+  

@@ -3,14 +3,16 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MyserviceService } from '../myservice.service';
 import { CookieService } from 'ngx-cookie-service';
+import { ApihitingService } from '../apihiting.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit,OnDestroy {
+  source:any=[];
    
-    constructor(private router:Router, public fb:FormBuilder,private myservice:MyserviceService ,private cookie:CookieService){
+    constructor(private router:Router, public fb:FormBuilder,private apihitting:ApihitingService, private myservice:MyserviceService ,private cookie:CookieService){
       // if(this.cookie.check('name')){
       //   router.navigate(['/home']);
       // }
@@ -26,8 +28,9 @@ export class LoginComponent implements OnInit,OnDestroy {
   }
     // name = new FormControl('');
       profileForm = this.fb.group({
-      Emailaddress:['',[Validators.required, Validators.email]],
-      password:['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z1-9\d$@$!%*?&].{8,}')]]
+      Emailaddress:['',[Validators.required]],
+      password:['',[Validators.required]],
+        // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z1-9\d$@$!%*?&].{8,}')]]
       });
   
     title = 'task';
@@ -41,31 +44,44 @@ export class LoginComponent implements OnInit,OnDestroy {
     gotohome(){
       this.router.navigate(['home'])
     }
+
     signIn(){
+      let json ={Email:this.profileForm.value.Emailaddress,password:this.profileForm.value.password}
+      this.apihitting.PostApi(json).subscribe(result=>{
+        console.log(result);
+        this.apihitting.apidata=result;
+        if(this.apihitting.apidata[0].condition=='True'){
+          this.myservice.data=this.profileForm.value?.Emailaddress
+          let encryptemail=btoa( JSON.stringify(this.profileForm.value.Emailaddress));
+          // sessionStorage.setItem('name',encryptemail);
+          this.cookie.set('name',encryptemail,1)
+          let encryptpass=btoa(JSON.stringify(this.profileForm.value.password));
+          localStorage.setItem('data',btoa(JSON.stringify(result)));
+          console.log((atob('data')));
+          localStorage.setItem('menu',btoa(JSON.stringify(this.apihitting.apidata[0].menu)));
+          
 
-// localStorage.setItem('name','any local')
-
-// sessionStorage.setItem('name',JSON.stringify(this.profileForm.value.Emailaddress))
-// sessionStorage.setItem('password',JSON.stringify(this.profileForm.value.password))
-
-      if(this.profileForm?.valid){
-        this.myservice.data=this.profileForm.value?.Emailaddress
-        let encryptemail=btoa( JSON.stringify(this.profileForm.value.Emailaddress));
-        // sessionStorage.setItem('name',encryptemail);
-        this.cookie.set('name',encryptemail,1)
-
-        let encryptpass=btoa(JSON.stringify(this.profileForm.value.password));
-        // sessionStorage.setItem('password',encryptpass);
-        this. cookie.set('password',encryptpass,1)
-        this.router.navigate(['/home'])
-
-        // this.cookie.set('encryptemail',1) 
-        // console.log(this.profileForm.value);
-         this.gotohome();
-        
+          // let encryptdata=btoa(JSON.stringify(result));
+          // console.log(encryptdata);
+          
+          // this.cookie.set('data',encryptdata);
+   
+          // sessionStorage.setItem('password',encryptpass);
+          this. cookie.set('password',encryptpass,1)
+          this.router.navigate(['/home'])
+  
+          // this.cookie.set('encryptemail',1) 
+          // console.log(this.profileForm.value);
+           this.gotohome();
+       
+          
+        }
+      })
       
-      }
-
+      
+// localStorage.setItem('name','any local')
+// sessionStorage.setItem('name',JSON.stringify(this.profileForm.value.Emailaddress))
+// sessionStorage.setItem('password',JSON.stringify(this.profileForm.value.password)) 
     }
     ngOnDestroy(): void {
       clearInterval(this.interval);

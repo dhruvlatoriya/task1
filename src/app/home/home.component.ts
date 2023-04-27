@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
 import { SessionexpiredComponent } from '../sessionexpired/sessionexpired.component';
+import { ApihitingService } from '../apihiting.service';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-home',
@@ -10,17 +12,24 @@ import { SessionexpiredComponent } from '../sessionexpired/sessionexpired.compon
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements  OnInit,OnDestroy{
+  panelOpenState = false;
 
   showFiller = false;
   id:any;
-  constructor(public router:Router, public cookie:CookieService,private dialog:MatDialog){}
+  menuarray:any;
+  constructor(public router:Router, public cookie:CookieService,private dialog:MatDialog,public apihitting:ApihitingService,public myservice:MyserviceService){}
   ngOnInit(): void {
+    this.menuarray = localStorage.getItem('menu');
+    this.menuarray = JSON.parse(atob(this.menuarray))
+    console.log(this.menuarray);
+    
     this.id =  setInterval(() => {
       if(!this.cookie.check('name')){
         // this.openDialog();
         this.router.navigate(['/login']); 
       }
     }, 100);
+
   }
   ngOnDestroy(): void {
     clearInterval(this.id)
@@ -51,6 +60,8 @@ export class HomeComponent implements  OnInit,OnDestroy{
   openDialog() {
     this.dialog.open(SessionexpiredComponent);
   }
+  
+  
   
 }
 

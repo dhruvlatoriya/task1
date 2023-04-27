@@ -1,10 +1,11 @@
-<div class="home">
+<app-header></app-header>
+<!-- <div class="home">
       <div class="button" [matMenuTriggerFor]="menu">
         <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
       </div>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="gotoProfile()">Profile</button>
-      <button mat-menu-item>dhruv@gmail.com</button>
+      <button mat-menu-item>{{apihitting.source[0].email}}</button>
       <button mat-menu-item (click)="gotoLogOut()">LogOut</button>
       </mat-menu>
 
@@ -13,17 +14,51 @@
           <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
         </button>
       </div>
-</div>
-<div>
+</div> -->
+<!-- <div>
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+
+      <mat-accordion *ngFor="let ele of menuarray">
+
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            <mat-icon style="font-size: smaller;">{{ele.icon}}</mat-icon>
+             {{ele.title}}
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <div *ngFor="let value of ele.children"><button mat-button>{{value.title}}</button></div> 
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+
     </mat-drawer>
   </mat-drawer-container>
-</div>
+</div> -->
 
 
+<div>
+  <mat-drawer-container class="example-container" autosize >
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="myservice.istoggle">
+
+      <mat-accordion *ngFor="let ele of menuarray">
+
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            <mat-icon style="font-size: smaller;">{{ele.icon}}</mat-icon>
+             {{ele.title}}
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <div *ngFor="let value of ele.children"><button mat-button>{{value.title}}</button></div> 
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>  

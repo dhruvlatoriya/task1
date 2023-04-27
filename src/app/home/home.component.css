@@ -1,10 +1,9 @@
-.home{
+/* .home{
     height: 10%;
     width: 100vw;
     border:1px solid black;
-    background-color: antiquewhite;
-    
-}
+    background-color: antiquewhite;  
+} */
 /* .homechild{
     padding-top: 10px;
     margin-left:95%;
@@ -26,7 +25,7 @@
   .example-sidenav {
     padding: 20px;
   }
-  .button{
+  /* .button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +34,7 @@
     border-radius:50%;
     margin-left:95%;
     
-  }
+  } */
   .button:hover{
     background-color: rgba(169, 169, 169, 0.233);
   }
