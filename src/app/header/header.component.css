@@ -1,17 +1,18 @@
 .header{
-    height: 10%;
+    height: 10vh;
     width: 100vw;
-    border:1px solid black;
+    padding: 0px 30px;
     background-color: antiquewhite;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
 }
+
 .button{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height:40px;
-    width:40px;
-    border-radius:50%;
-    margin-left:95%;
+    align-items: end;
+    padding-bottom: 6px;
   }
   .button:hover{
     background-color: rgba(169, 169, 169, 0.233);

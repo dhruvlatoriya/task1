@@ -9,23 +9,23 @@ import { ApihitingService } from '../apihiting.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit,OnDestroy {
+export class LoginComponent implements OnDestroy {
   source:any=[];
-   
-    constructor(private router:Router, public fb:FormBuilder,private apihitting:ApihitingService, private myservice:MyserviceService ,private cookie:CookieService){
-      // if(this.cookie.check('name')){
-      //   router.navigate(['/home']);
-      // }
+  
+    constructor(private router:Router,  public fb:FormBuilder,public apihitting:ApihitingService, private myservice:MyserviceService ,private cookie:CookieService){
+      if(this.cookie.check('name')){
+        router.navigate(['/dashboard']);
+      }
     }
   
     interval:any;
-  ngOnInit(): void {
-    this.interval = setInterval(()=>{
-      if(this.cookie.check('name')){
-        this.router.navigate(['/home']);
-      }
-    },50)
-  }
+  // ngOnInit(): void {
+  //   this.interval = setInterval(()=>{
+  //     if(this.cookie.check('name')){
+  //       this.router.navigate(['/home']);
+  //     }
+  //   },50)
+  // }
     // name = new FormControl('');
       profileForm = this.fb.group({
       Emailaddress:['',[Validators.required]],
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit,OnDestroy {
       this.changetype= !this.changetype;
     }
     gotohome(){
-      this.router.navigate(['home'])
+      this.router.navigate(['dashboard'])
     }
 
     signIn(){
@@ -59,21 +59,21 @@ export class LoginComponent implements OnInit,OnDestroy {
           localStorage.setItem('data',btoa(JSON.stringify(result)));
           console.log((atob('data')));
           localStorage.setItem('menu',btoa(JSON.stringify(this.apihitting.apidata[0].menu)));
-          
-
           // let encryptdata=btoa(JSON.stringify(result));
           // console.log(encryptdata);
-          
           // this.cookie.set('data',encryptdata);
-   
           // sessionStorage.setItem('password',encryptpass);
           this. cookie.set('password',encryptpass,1)
-          this.router.navigate(['/home'])
-  
+          this.router.navigate(['/dashboard'])
           // this.cookie.set('encryptemail',1) 
           // console.log(this.profileForm.value);
            this.gotohome();
-       
+           this.apihitting.islogin= true;
+        }
+        else{
+          this.apihitting.islogin=false;
+          this.apihitting.apidata = result;
+          console.log(result);
           
         }
       })

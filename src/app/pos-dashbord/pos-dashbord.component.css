@@ -1,0 +1,25 @@
+.card{
+    padding-top:10px;
+    padding-left: 10px;
+    height:25%;
+    width:30%;
+  border: 1px solid rgba(128, 128, 128, 0.158);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color:white ;
+    color: #0000008A; 
+}
+.card:hover{
+    background-color: rgba(0, 0, 255, 0.384);
+    color: white;
+    
+    
+}
+.icon{
+    color:red
+}
+.card:hover .icon {
+    color: white;
+}

@@ -8,6 +8,7 @@ export class ApihitingService {
 
   constructor(private http:HttpClient){ }
 apidata:any;
+public islogin:any
   PostApi(json:any){
     let url='https://agrodev.pristinefulfil.com/api/User/Login'
     return this.http.post(url,json)

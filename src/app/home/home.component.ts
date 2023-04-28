@@ -43,8 +43,9 @@ export class HomeComponent implements  OnInit,OnDestroy{
   //     }, 500);
   //  }
    gotoLogOut(){
-    this.router.navigate(['/login']);
+    
     this.cookie.deleteAll();
+    this.router.navigate(['/login']);
    }
    gotoProfile(){
     this.router.navigate(['/profile'])
@@ -60,7 +61,7 @@ export class HomeComponent implements  OnInit,OnDestroy{
   openDialog() {
     this.dialog.open(SessionexpiredComponent);
   }
-  
+ 
   
   
 }

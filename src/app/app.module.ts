@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { PosDashbordComponent } from './pos-dashbord/pos-dashbord.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     SessionexpiredComponent,
     ProfileComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    PosDashbordComponent
   ],
   imports: [
     BrowserModule,
