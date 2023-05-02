@@ -1,12 +1,8 @@
 <app-header></app-header>
-
-
 <div>
   <mat-drawer-container class="example-container" autosize >
     <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="myservice.istoggle">
-
       <mat-accordion *ngFor="let ele of menuarray">
-
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -14,11 +10,11 @@
             <mat-icon style="font-size:smaller;">{{ele.icon}}</mat-icon>
              {{ele.title}}
             </mat-panel-title>
-            
           </mat-expansion-panel-header>
           <div *ngFor="let value of ele.children"><button mat-button [routerLink]="value.url">{{value.title}}</button></div> 
         </mat-expansion-panel>
       </mat-accordion>
+      <div style="height: 40px; width:109px; background-color:aqua;position:sticky-bottom"></div>
     </mat-drawer>
     <mat-drawer-content>
       <router-outlet></router-outlet>

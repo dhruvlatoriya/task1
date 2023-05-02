@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit{
     console.log(this.menuarray);
   
     this.profile =localStorage.getItem('data');
-    this.profile = JSON.parse(atob(this.profile))
-    
+    this.profile = JSON.parse(atob(this.profile)) 
 }
 }

@@ -4,11 +4,11 @@
     padding: 0px 30px;
     background-color: antiquewhite;  
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
+   justify-content: space-between;
+   /* align-items: center;  */
 }
 
-.button{
+/* .button{
     display: flex;
     justify-content: center;
     align-items: end;
@@ -16,4 +16,4 @@
   }
   .button:hover{
     background-color: rgba(169, 169, 169, 0.233);
-  }
+  } */

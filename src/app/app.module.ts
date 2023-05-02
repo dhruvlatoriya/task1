@@ -23,6 +23,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { PosDashbordComponent } from './pos-dashbord/pos-dashbord.component';
+import { SaledashboardComponent } from './saledashboard/saledashboard.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PosDashbordComponent } from './pos-dashbord/pos-dashbord.component';
     ProfileComponent,
     HeaderComponent,
     SidenavComponent,
-    PosDashbordComponent
+    PosDashbordComponent,
+    SaledashboardComponent
   ],
   imports: [
     BrowserModule,

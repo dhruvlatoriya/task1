@@ -1,19 +1,19 @@
 <div class="header">
-  <div>
-    <button type="button" mat-button (click)="toggle()">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
-    </button>
+  <!-- style="display: flex;" -->
+  <div style="display:flex; align-items:center; gap:10px;">
+    
+      <mat-icon  (click)="toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+   
+    <div style="height:100%; width: 100%;"><img src="logo-text.png" height="100%" width="100%"></div>
   </div>
-
-  <div style="display:flex; align-items: center; gap:20px;">
+ 
+  <div style="display: flex; align-items:center; gap: 10px;">
     <div><mat-icon fontIcon="circle_notifications"></mat-icon></div>
-    <div class="button" [matMenuTriggerFor]="menu">
+    <div style="display:flex; align-items:end; padding-bottom:5px;" class="button" [matMenuTriggerFor]="menu">
       <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
        {{profile[0].name}}
   </div>
   </div>
-  
-  
 </div>
 <mat-menu #menu="matMenu">
   <!-- <button mat-menu-item (click)="gotoProfile()">Profile</button> -->

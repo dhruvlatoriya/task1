@@ -21,7 +21,7 @@
               <div style="color:red" *ngIf="!this.profileForm.get('password')?.valid&&this.profileForm.get('password')?.value!==''">please insert valid password</div>
             </div>  
           <p style="margin-top:30px;">Forgot your password? Reset Now</p>
-          <div style="color:red" *ngIf="!apihitting.islogin">{{apihitting.apidata[0].message}}</div>
+          <!-- <div style="color:red" *ngIf="!apihitting.islogin">{{apihitting.apidata[0].message}}</div> -->
           <button class="sumbit" style="height:6vh; width:100%; margin-top:70px;border-radius:7px;background-color:#9099df;"(click)="signIn()">Sign in</button>
           <p>powered by pristine Business solution</p>
       </div>
